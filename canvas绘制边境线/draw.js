@@ -38,7 +38,8 @@ function drawPolygon(polygon, scalex, scaley, coloritem) {
             ctx.lineTo(l, t)
         }
     }
-    ctx.globalCompositeOperation = 'destination-over'
+    // canvas globalCompositeOperation属性解决部分小区域被大区域覆盖的问题（需要通过颜色值解决）
+    ctx.globalCompositeOperation = 'dorken'
     ctx.fillStyle = coloritem
     ctx.strokeStyle = "red"
     ctx.closePath();
